@@ -1,0 +1,11 @@
+aside {
+  .scheduler_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .title {
+    grid-column: 1 / span 2;
+    text-align: center;
+    font-weight: bold;
+  }
+}
