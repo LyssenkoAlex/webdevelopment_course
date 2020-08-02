@@ -1,16 +1,18 @@
 .container {
-  display: grid;
-
   grid-template-areas:
-    "header header header"
-    "nav content side"
-    "footer footer footer";
+      "header"
+      "nav"
+      "content"
+      "side"
+      "footer";
 
-  grid-template-columns: 200px 1fr 200px;
-  grid-template-rows: auto 1fr auto;
-  grid-gap: 0;
-
-  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows:
+      auto /* Header */
+      minmax(75px, auto) /* Nav */
+      1fr /* Content */
+      minmax(75px, auto) /* Sidebar */
+      auto; /* Footer */
 }
 
 header {
@@ -22,7 +24,6 @@ header {
 
 nav {
   grid-area: nav;
-  margin-left: 0.5rem;
 }
 
 main {
