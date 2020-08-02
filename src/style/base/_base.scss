@@ -1,0 +1,54 @@
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 20px;
+
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', 'monospace';
+  font-size: 10px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+   font-size: 1rem;
+}
+
+
+header, nav, aside, footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+span {
+  font-size: 1rem;
+}
+
+
+nav, aside {
+  background-color: #F2EAD3;
+  display: flex;
+  flex-flow: column;
+  h4 {
+    margin-top: 1rem;
+  }
+}
+
+
+header, footer {
+  background-color: black;
+  padding: 0 15px;
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
+  h3 {
+    margin: 10px;
+  }
+}
+
+
