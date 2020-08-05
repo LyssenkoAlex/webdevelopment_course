@@ -1,0 +1,30 @@
+.task_list {
+
+    list-style: none;
+
+
+  li:before {
+    content: "•";
+    margin: 0 .5rem 0 0;
+    color: #ff8a00;
+
+
+  }
+  li {
+    background: #fff6ea;
+    margin:5px;
+  }
+}
+.points_container {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.points {
+  color: #ff8a00;
+  margin-left: 15px;
+}
+.bold {
+  font-weight: bold;
+}

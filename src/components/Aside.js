@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from 'react-router-dom'
 
 const Aside = () => {
   return (
@@ -21,11 +22,13 @@ const Aside = () => {
           <span>7:45 AM / 6:15 PM</span>
         </div>
         <div className="title">
+
           <span>3000kzt for 1h</span>
         </div>
       </div>
 
-      <h1>homework is must</h1>
+
+      <NavLink to="/tasks"> <h1>homework is must</h1></NavLink>
     </aside>
   );
 };
