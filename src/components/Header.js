@@ -1,13 +1,14 @@
-import React from 'react';
-
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
-
-    return (
-        <header>
-            <h3>Welcome to miniDev</h3>
-        </header>
-    )
-}
+  return (
+    <header>
+      <NavLink to="/">
+        <h3>Welcome to miniDev</h3>
+      </NavLink>
+    </header>
+  );
+};
 
 export default Header;
