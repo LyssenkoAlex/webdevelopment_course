@@ -1,4 +1,6 @@
 .container {
+  display: grid;
+  height: 100vh;
   grid-template-areas:
       "header"
       "nav"
@@ -28,13 +30,12 @@ nav {
 
 main {
   grid-area: content;
-  max-width: 800px;
   margin: auto;
+  width: 100%;
 }
 
 aside {
   grid-area: side;
-  margin-right: 0.5rem;
 }
 
 footer {

@@ -1,17 +1,28 @@
 main {
   padding: 20px;
   background-color: #f5f6f7;
-  display: flex;
-  flex-flow: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-content: center;
   text-align: center;
+  @include mobile-small-width {
+    grid-template-columns: 1fr;
+  }
+
   li {
     font-size: 2rem;
     text-align: left;
   }
   ul {
     text-align: left;
-    margin-left: 15px;
+    margin-left: 25px;
     list-style-type: square;
+  }
+
+  h1 {
+    grid-column: 1 / span 2;
+    @include mobile-small-width {
+      grid-column: 1 ;
+    }
   }
 }

@@ -1,24 +1,34 @@
 import React from "react";
+import {WEEK_1_2, WEEK_3_4} from '../data/course_content';
 
 const About = () => {
-  return (
-    <main>
-      <h1>Welcome to Web Development Course!</h1>
-      <h2>Course Content</h2>
-      <ul>
-        <li>Basic HTML and HTML5</li>
-        <li>Intro to CSS</li>
-        <li>Flex layout</li>
-        <li>Grid layout</li>
-        <li>Build first page</li>
-        <li>Into to SASS</li>
-        <li>Convert your CSS to SASS</li>
-        <li>Adaptive and responsive layout</li>
-        <li>Media queries</li>
-        <li>Page deploy</li>
-      </ul>
-    </main>
-  );
+
+    let weekList_1 = WEEK_1_2.map((item, index) => {
+            return  <li key={`item_${index}`}>{item}</li>
+    })
+
+    let weekList_2 = WEEK_3_4.map((item, index) => {
+        return  <li key={`item_${index}`}>{item}</li>
+    })
+
+
+    return (
+        <main>
+            <h1>Welcome to Web Development Course!</h1>
+            <section className='week_container'>
+            <h2>1st and 2nd week</h2>
+            <ul>
+                {weekList_1}
+            </ul>
+            </section>
+            <section className='week_container'>
+            <h2>3rd and 4-th week</h2>
+            <ul>
+                {weekList_2}
+            </ul>
+            </section>
+        </main>
+    );
 };
 
 export default About;

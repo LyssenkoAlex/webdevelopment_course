@@ -13,17 +13,16 @@ const Aside = () => {
           <span>Monday:</span>
         </div>
         <div>
-          <span>7:45 AM / 6:15 PM</span>
+          <span>7:45 AM / 6:15 AM</span>
         </div>
         <div>
           <span>Wednesday:</span>
         </div>
         <div>
-          <span>7:45 AM / 6:15 PM</span>
+          <span>7:45 PM / 6:15 PM</span>
         </div>
         <div className="title">
-
-          <span>3000kzt for 1h</span>
+          <span>Send mail</span>
         </div>
       </div>
 

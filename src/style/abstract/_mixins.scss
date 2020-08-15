@@ -22,3 +22,20 @@
     }
   }
 }
+
+@mixin mobile-small-width {
+  @media only screen and (max-width: $mobile-small-width) {@content}
+}
+
+@mixin mobile-medium-width {
+  @media only screen and (max-width: $mobile-medium-width) {@content}
+}
+
+@mixin tablet-width {
+  @media only screen and (max-width: $tablet-width) {@content}
+}
+
+@mixin content-width {
+  @media only screen and (max-width: $content-width) {@content}
+}
+
