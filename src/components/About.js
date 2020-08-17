@@ -12,10 +12,6 @@ const About = () => {
         return  <li key={`item_${index}`}>{item}</li>
     })
 
-    console.log('FROM_EMAIL_ADDRESS About: ', process.env.REACT_APP_FROM_EMAIL_ADDRESS)
-    console.log('FROM_EMAIL_ADDRESS About2: ', process.env)
-    console.log('FROM_EMAIL_ADDRESS About3: ', process)
-
     return (
         <main>
             <h1>Welcome to Web Development Course!</h1>
