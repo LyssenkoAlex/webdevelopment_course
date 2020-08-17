@@ -1,5 +1,6 @@
 import React from "react";
 import {WEEK_1_2, WEEK_3_4} from '../data/course_content';
+import mail from '../lambda/send-mail';
 
 const About = () => {
 
@@ -11,6 +12,9 @@ const About = () => {
         return  <li key={`item_${index}`}>{item}</li>
     })
 
+    console.log('FROM_EMAIL_ADDRESS About: ', process.env.REACT_APP_FROM_EMAIL_ADDRESS)
+    console.log('FROM_EMAIL_ADDRESS About2: ', process.env)
+    console.log('FROM_EMAIL_ADDRESS About3: ', process)
 
     return (
         <main>
@@ -27,6 +31,7 @@ const About = () => {
                 {weekList_2}
             </ul>
             </section>
+            <button onClick={() => {mail.handler({message: 'my super message!'}).then(r => (console.log('red: ', r)))}}>Send mail</button>
         </main>
     );
 };

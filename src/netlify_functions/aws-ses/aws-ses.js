@@ -1,21 +1,22 @@
-exports.handler = async event => {
+require('dotenv').config()
+const { ACCESS_KEY_ID, SECRET_ACCESS_KEY, REGION, FROM_EMAIL_ADDRESS, CONTACT_TO_EMAIL_ADDRESS } = process.env
+
+
+const handler = async config => {
     const AWS = require("aws-sdk")
 
-    let requestParams = JSON.parse(event.body)
-    let name = requestParams.name
-    let email = requestParams.email
-    let message = requestParams.message
+    let message = config.message;
 
     AWS.config.update({
-        accessKeyId: 'your-aws-access-key-here',
-        secretAccessKey: 'your-secret-access-key-here',
-        region: 'aws-region-here'
+        accessKeyId: ACCESS_KEY_ID,
+        secretAccessKey: SECRET_ACCESS_KEY,
+        region: REGION
     })
 
     const ses = new AWS.SES({ apiVersion: "2010-12-01" })
     const params = {
         Destination: {
-            ToAddresses: [email] // Email address/addresses that you want to send your email
+            ToAddresses: [CONTACT_TO_EMAIL_ADDRESS] // Email address/addresses that you want to send your email
         },
         //   ConfigurationSetName: <<ConfigurationSetName>>,
         Message: {
@@ -26,9 +27,9 @@ exports.handler = async event => {
                     Data:
                         `<html>
                   <body>
-                    From: ${name}
+                    From: ${FROM_EMAIL_ADDRESS}
                     <br />
-                    Message: ${message}
+                    Message AWS: ${message}
                   </body>
               </html>`
                 },
@@ -42,21 +43,23 @@ exports.handler = async event => {
                 Data: "From Contact Form"
             }
         },
-        Source: email
+        Source: FROM_EMAIL_ADDRESS
     }
 
     return ses.sendEmail(params).promise().then(data => {
         console.log("email submitted to SES", data);
         return {
             statusCode: 200,
-            body: `Message sent`,
+            body: `Message sent using AWS`,
         }
     })
         .catch(error => {
             console.log(error);
             return {
                 statusCode: 500,
-                body: `Message unsuccesfully sent, error: ${error}`,
+                body: `Message unsuccessfully sent, error: ${error}`,
             }
         })
 }
+
+export default handler ;
