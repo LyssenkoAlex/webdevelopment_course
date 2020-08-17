@@ -27,7 +27,7 @@ const About = () => {
                 {weekList_2}
             </ul>
             </section>
-            <button onClick={() => {handler({message: 'my super message!'}).then(r => (console.log('red: ', r)))}}>Send mail</button>
+            <button onClick={() => {handler({message: 'my super message!'}).then(r => (console.log('send: ', r)))}}>Send mail</button>
         </main>
     );
 };

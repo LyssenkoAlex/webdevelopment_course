@@ -4,7 +4,6 @@ const { REACT_APP_ACCESS_KEY_ID, REACT_APP_SECRET_ACCESS_KEY, REACT_APP_REGION, 
 
 export default async function handler ( config) {
     const AWS = require("aws-sdk")
-    console.log('FROM_EMAIL_ADDRESS: ', process.env.REACT_APP_FROM_EMAIL_ADDRESS)
 
     let message = config.message;
 
@@ -47,10 +46,8 @@ export default async function handler ( config) {
         Source: REACT_APP_FROM_EMAIL_ADDRESS
     }
 
-    console.log('params: ', params)
 
     return ses.sendEmail(params).promise().then(data => {
-        console.log("email submitted to SES", data);
         return {
             statusCode: 200,
             body: `Message sent using AWS react2`,
