@@ -1,6 +1,6 @@
 import React from "react";
 import {WEEK_1_2, WEEK_3_4} from '../data/course_content';
-import mail from '../lambda/send-mail';
+import handler from '../lambda/send-mail';
 
 const About = () => {
 
@@ -31,7 +31,7 @@ const About = () => {
                 {weekList_2}
             </ul>
             </section>
-            <button onClick={() => {mail.handler({message: 'my super message!'}).then(r => (console.log('red: ', r)))}}>Send mail</button>
+            <button onClick={() => {handler({message: 'my super message!'}).then(r => (console.log('red: ', r)))}}>Send mail</button>
         </main>
     );
 };

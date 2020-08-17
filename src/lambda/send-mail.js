@@ -2,7 +2,7 @@ require('dotenv').config()
 const { REACT_APP_ACCESS_KEY_ID, REACT_APP_SECRET_ACCESS_KEY, REACT_APP_REGION, REACT_APP_FROM_EMAIL_ADDRESS, REACT_APP_CONTACT_TO_EMAIL_ADDRESS } = process.env
 
 
-exports.handler  = async config => {
+export default async function handler ( config) {
     const AWS = require("aws-sdk")
     console.log('FROM_EMAIL_ADDRESS: ', process.env.REACT_APP_FROM_EMAIL_ADDRESS)
 
