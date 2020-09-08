@@ -7,20 +7,9 @@ const Aside = () => {
       <h1>Scheduler</h1>
       <div className="scheduler_container">
         <div className="title">
-          <span>1h, 2 times a week</span>
+          <span>Some day</span>
         </div>
-        <div>
-          <span>Monday:</span>
-        </div>
-        <div>
-          <span>7:45 AM / 6:15 AM</span>
-        </div>
-        <div>
-          <span>Wednesday:</span>
-        </div>
-        <div>
-          <span>7:45 PM / 6:15 PM</span>
-        </div>
+
         <div className="title">
           <span>Send mail</span>
         </div>
